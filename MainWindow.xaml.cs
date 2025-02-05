@@ -152,7 +152,7 @@ namespace ImageScale_WPF
                 }
 
                 // Aktualisiere das Menü-Item für den aktuellen Anzeigemodus
-                menuItemShowMode.Header = $"{selectedText}";
+                menuItemShowMode.Header = $"{selectedMode.Text}";
             }
         }
     }
