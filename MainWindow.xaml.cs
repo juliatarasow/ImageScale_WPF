@@ -24,10 +24,10 @@ namespace ImageScale_WPF
 
             List<ComboBoxItemData> items = new List<ComboBoxItemData>
             {
-                new ComboBoxItemData { Text = "Keine Skalierung", Bild = "/icons/icon-none.png" },
-                new ComboBoxItemData { Text = "Ausfüllen", Bild = "/icons/icon-fill.png" },
-                new ComboBoxItemData { Text = "Einheitlich skalieren", Bild = "/icons/ico-uniform.png" },
-                new ComboBoxItemData { Text = "Einheitlich ausfüllen", Bild = "/icons/ico-utfill.png" }
+                new ComboBoxItemData { Text = "Keine Skalierung", Bild = "/icons/icon-none.png", Tag="none" },
+                new ComboBoxItemData { Text = "Ausfüllen", Bild = "/icons/icon-fill.png", Tag="fill" },
+                new ComboBoxItemData { Text = "Einheitlich skalieren", Bild = "/icons/ico-uniform.png", Tag="uniform" },
+                new ComboBoxItemData { Text = "Einheitlich ausfüllen", Bild = "/icons/ico-utfill.png", Tag="uniformToFill" }
             };
 
             fillComboBox.ItemsSource = items;
@@ -37,6 +37,7 @@ namespace ImageScale_WPF
         {
             public string? Text { get; set; }
             public string? Bild { get; set; }
+            public string? Tag { get; set; }
         }
 
         private void OnDrop(object sender, DragEventArgs e)
@@ -132,20 +133,20 @@ namespace ImageScale_WPF
         {
             if (fillComboBox.SelectedItem is ComboBoxItemData selectedMode)
             {
-                string selectedText = selectedMode.Text;
+                string selectedText = selectedMode.Tag;
 
                 switch (selectedText)
                 {
-                    case "Keine Skalierung":
+                    case "none":
                         image.Stretch = Stretch.None;
                         break;
-                    case "Ausfüllen":
+                    case "fill":
                         image.Stretch = Stretch.Fill;
                         break;
-                    case "Einheitlich skalieren":
+                    case "uniform":
                         image.Stretch = Stretch.Uniform;
                         break;
-                    case "Einheitlich ausfüllen":
+                    case "uniformToFill":
                         image.Stretch = Stretch.UniformToFill;
                         break;
                 }

@@ -18,6 +18,7 @@
                           Header="_Aktueller Anzeigemodus"/>
             </MenuItem>
         </Menu>
+        
         <ToolBarTray Orientation="Horizontal"
                      VerticalAlignment="Top"
                      HorizontalAlignment="Stretch"
@@ -49,6 +50,7 @@
                 </ComboBox>
             </ToolBar>
         </ToolBarTray>
+        
         <Grid>
             <Image x:Name="image"/>
         </Grid>
