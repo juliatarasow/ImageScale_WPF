@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="icons\ico-uniform.png" />
+    <None Remove="icons\ico-utfill.png" />
+    <None Remove="icons\icon-fill.png" />
+    <None Remove="icons\icon-none.png" />
+    <None Remove="icons\ico_open.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons\ico-uniform.png" />
+    <Resource Include="icons\ico-utfill.png" />
+    <Resource Include="icons\icon-none.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons\icon-fill.png" />
+    <Resource Include="icons\ico_open.png" />
+  </ItemGroup>
+
+</Project>
